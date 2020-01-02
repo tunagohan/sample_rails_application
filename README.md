@@ -1,10 +1,8 @@
 # sample_rails_application
 
-rails ?????????????
+## Rails on Vue のサンプルアプリケーション
 
-## ????????????????
-
-### 1. ???? Ruby ???? Bundle ???
+### 1. Ruby の設定と Bundle 初期化
 
 ```
 
@@ -14,7 +12,7 @@ $ bundle init
 
 ```
 
-### 2. Gemfile ???
+### 2. Gemfile 編集
 
 ```
 
@@ -33,7 +31,7 @@ gem 'rails', '~> 6.0.2', '>= 6.0.2.1'
 
 ```
 
-### 3. Rails new ??
+### 3. Rails new を実行
 
 ```
 
@@ -41,7 +39,7 @@ $ rails new . --database=mysql --skip-test --force
 
 ```
 
-### 4. webpack ???????? vue ???????
+### 4. Webpacker のインストールと Vue インストール
 
 ```
 
@@ -58,7 +56,7 @@ $ bundle exec rails webpacker:install:vue
 
 ```
 
-### 5. DB ??
+### 5. DB の設定
 
 ```
 
@@ -90,7 +88,7 @@ $ bundle exec rails db:create db:migrate
 
 ```
 
-### 6. ???????
+### 6. サーバーの起動
 
 ```
 
@@ -100,7 +98,7 @@ $ bundle exec rails s -b 0.0.0.0 -p 3000
 
 ![](./readme_images/rails_server.png)
 
-### 7. hello vue ?????
+### 7. hello vue の表示
 
 ```
 
@@ -135,9 +133,9 @@ $ vim app/views/page/home.html.erb
 
 ![](./readme_images/hello_vue.png)
 
-### vue ????????????????
+### vue でモデルの表示と検索機能の実装
 
-- ??????
+- Model の追加
 
 ```
 
@@ -145,7 +143,7 @@ $ bundle exec rails g model book
 
 ```
 
-- migration ???????
+- migration の実行
 
 ```
 
@@ -180,7 +178,7 @@ $ bundle exec rails db:migrate
 
 ```
 
-- seed ???
+- seed の作成と追加
 
 ```
 
@@ -192,8 +190,8 @@ $ vim db/seeds.rb
 
 20.times do |count|
   Book.create!(
-    title: "????? No. #{count}",
-    description: ['??????', '???', '???', '???', '???'].sample,
+    title: サンプル本 No. #{count}",
+    description: ['ペンギンの本', '犬の本', '猫の本', '豚の本', '牛の本'].sample,
     payment: [1100, 1500, 2500, 3000, 4500, 6000].sample
   )
 end
@@ -206,7 +204,7 @@ $ bundle exec rails db:seed
 
 ```
 
-- ??????
+- レコードの確認
 
 ```
 
@@ -215,31 +213,31 @@ mysql -hlocalhost -uroot -p sample_rails_application_development -e "select titl
 +------------------------+
 | title                  |
 +------------------------+
-| ????? No. 0       |
-| ????? No. 1       |
-| ????? No. 2       |
-| ????? No. 3       |
-| ????? No. 4       |
-| ????? No. 5       |
-| ????? No. 6       |
-| ????? No. 7       |
-| ????? No. 8       |
-| ????? No. 9       |
-| ????? No. 10      |
-| ????? No. 11      |
-| ????? No. 12      |
-| ????? No. 13      |
-| ????? No. 14      |
-| ????? No. 15      |
-| ????? No. 16      |
-| ????? No. 17      |
-| ????? No. 18      |
-| ????? No. 19      |
+| サンプル本 No. 0       |
+| サンプル本 No. 1       |
+| サンプル本 No. 2       |
+| サンプル本 No. 3       |
+| サンプル本 No. 4       |
+| サンプル本 No. 5       |
+| サンプル本 No. 6       |
+| サンプル本 No. 7       |
+| サンプル本 No. 8       |
+| サンプル本 No. 9       |
+| サンプル本 No. 10      |
+| サンプル本 No. 11      |
+| サンプル本 No. 12      |
+| サンプル本 No. 13      |
+| サンプル本 No. 14      |
+| サンプル本 No. 15      |
+| サンプル本 No. 16      |
+| サンプル本 No. 17      |
+| サンプル本 No. 18      |
+| サンプル本 No. 19      |
 +------------------------+
 
 ```
 
-- axios ???????
+- axios のインストール
 
 ```
 
@@ -248,7 +246,7 @@ $ yarn add axios
 
 ```
 
-- routes ???
+- routes の追加
 
 ```
 
@@ -265,23 +263,23 @@ end
 
 ```
 
-- ?? `http://localhost:3000/api/v1/books.json`
+- 表示して確認 `http://localhost:3000/api/v1/books.json`
 
 ```
 
 [
   {
     "id": 1,
-    "title": "????? No. 0",
-    "description": "???",
+    "title": "サンプル本 No. 0",
+    "description": "豚の本",
     "payment": 2500,
     "created_at": "2020-01-02T07:21:37.728Z",
     "updated_at": "2020-01-02T07:21:37.728Z"
   },
   {
     "id": 2,
-    "title": "????? No. 1",
-    "description": "???",
+    "title": "サンプル本 No. 1",
+    "description": "猫の本",
     "payment": 6000,
     "created_at": "2020-01-02T07:21:37.732Z",
     "updated_at": "2020-01-02T07:21:37.732Z"
@@ -292,7 +290,7 @@ end
 
 ```
 
-- controller ???
+- controller アクションの追加
 
 ```
 
@@ -315,7 +313,7 @@ end
 
 ```
 
-- vue ???????
+- vue の修正
 
 ```
 
@@ -367,11 +365,11 @@ p {
 
 ```
 
-- ??
+- 表示
 
 ![](./readme_images/vue_axios_all.png)
 
-- ?????????????
+- リアルタイム検索機能の追加
 
 ```
 
@@ -441,6 +439,6 @@ p {
 
 ```
 
-- ??
+- 表示
 
 ![](./readme_images/vue_realtime_search.gif)
