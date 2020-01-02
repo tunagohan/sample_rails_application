@@ -44,7 +44,7 @@ $ rails new . --database=mysql --skip-test --force
 ```
 
 $ bundle exec rails webpacker:install
-> > Webpacker successfully installed ?? ??
+> > Webpacker successfully installed 🎉 🍰
 
 $ bundle exec bin/webpack
 > > Hash: 02cf28c4579467e946b3
@@ -52,7 +52,7 @@ $ bundle exec bin/webpack
 > > Time: 4605ms
 
 $ bundle exec rails webpacker:install:vue
-> > Webpacker now supports Vue.js ??
+> > Webpacker now supports Vue.js 🎉
 
 ```
 
@@ -65,7 +65,7 @@ $ vim config/database.yml
 ```
 
 ```
-# ??? `mysql -h localhost -u root -p` ????????????????
+# 事前にmysqlに接続を行い接続確認を取っておく `mysql -h localhost -u root -p`
 
 default: &default
   adapter: mysql2
@@ -242,7 +242,7 @@ mysql -hlocalhost -uroot -p sample_rails_application_development -e "select titl
 ```
 
 $ yarn add axios
-> > ?  Done in 3.56s.
+> > ✨Done in 3.56s.
 
 ```
 
