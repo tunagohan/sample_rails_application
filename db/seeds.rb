@@ -5,3 +5,11 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+20.times do |count|
+  Book.create!(
+    title: "サンプル本 No. #{count}",
+    description: ['ペンギンの本', '犬の本', '猫の本', '牛の本', '豚の本'].sample,
+    payment: [1100, 1500, 2500, 3000, 4500, 6000].sample
+  )
+end
